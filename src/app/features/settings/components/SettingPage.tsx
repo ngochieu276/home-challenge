@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Toggle } from "@/components/ui/toggle"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
+import { useSettingsStore } from "../../../store/store.setting"
+import { toast } from "react-toastify"
 
 const settingsSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -23,6 +25,7 @@ const SettingPage = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<SettingsFormValues>({
     resolver: zodResolver(settingsSchema),
@@ -34,10 +37,20 @@ const SettingPage = () => {
   })
 
   const { theme, setTheme } = useTheme();
+  const updateSettings = useSettingsStore((state) => state.updateSettings);
+  const name = useSettingsStore((state) => state.name);
+  const email = useSettingsStore((state) => state.email);
+
+  // Sync form values with zustand store
+  React.useEffect(() => {
+    setValue('name', name);
+    setValue('email', email);
+  }, [name, email, setValue]);
 
   const onSubmit = (data: SettingsFormValues) => {
-    // Handle form submission (e.g., API call)
-    alert(JSON.stringify(data, null, 2))
+    updateSettings({ name: data.name, email: data.email });
+    if (isSubmitSuccessful) toast.success("Update");
+    
   }
 
   return (
@@ -51,7 +64,11 @@ const SettingPage = () => {
             aria-label="Toggle dark mode"
             className="w-12 h-10"
           >
-            {theme === "dark" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+            {theme === "dark" ? (
+              <Moon className="w-5 h-5" />
+            ) : (
+              <Sun className="w-5 h-5" />
+            )}
           </Toggle>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
@@ -63,6 +80,7 @@ const SettingPage = () => {
               error={errors.name?.message}
               placeholder="Your name"
               {...register("name")}
+              onChange={(e) => setValue("name", e.target.value)}
             />
           </div>
           <div>
@@ -73,6 +91,7 @@ const SettingPage = () => {
               error={errors.email?.message}
               placeholder="you@example.com"
               {...register("email")}
+              onChange={(e) => setValue("email", e.target.value)}
             />
           </div>
           <div className="flex items-center gap-2">
@@ -86,16 +105,16 @@ const SettingPage = () => {
               Subscribe to newsletter
             </label>
           </div>
-          <Button
-            type="submit"
-            className="w-40"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Saving..." : "Save Changes"}
-          </Button>
-          {isSubmitSuccessful && (
-            <p className="text-green-600 text-sm mt-2">Settings saved!</p>
-          )}
+          <div className="flex justify-end">
+            <Button
+              type="submit"
+              variant={'default'}
+              className="w-40 "
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Saving..." : "Save Changes"}
+            </Button>
+          </div>
         </form>
       </Card>
     </div>

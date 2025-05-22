@@ -1,6 +1,14 @@
-import DashboardPage from "@/app/features/dashboard/components/DashboardPage";
 
+'use client'
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
-  return <DashboardPage />;
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/dashboard");
+  }, []);
+
+  return null;
 }

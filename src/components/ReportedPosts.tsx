@@ -12,7 +12,7 @@ export default function ReportedPosts({ posts }: { posts: Post[] }) {
         >
           <CardContent className="flex justify-between items-center">
             <CardTitle>{post.title}</CardTitle>
-            <Button className="bg-green-400 w-25" >
+            <Button className="bg-green-600 w-25" >
               View
             </Button>
           </CardContent>

@@ -16,11 +16,11 @@ export default function PendingEvents({ events }: { events: Event[] }) {
             <CardTitle>{event.name}</CardTitle>
             <div>
               {event.status === "approve" ? (
-                <Button className="w-25 bg-green-400 ">
+                <Button className="w-25 bg-green-600 hover:bg-green-600/90">
                   Approve
                 </Button>
               ) : (
-                <Button className="w-25 bg-red-400 ">
+                <Button className="w-25 bg-red-400 hover:bg-red-400/90">
                   Reject
                 </Button>
               )}

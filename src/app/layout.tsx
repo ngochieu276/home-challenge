@@ -5,6 +5,7 @@ import "./app.css";
 import Sidebar from "@/components/Sidebar";
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/Header";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,7 @@ export default function RootLayout({
               <main className="flex-1 content">{children}</main>
             </div>
           </div>
+          <ToastContainer />
         </ThemeProvider>
       </body>
     </html>
