@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dash
 
-## Getting Started
+[GitHub Repository](https://github.com/ngochieu276/home-challenge)
 
-First, run the development server:
+## How to Run the Project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Assumptions & Shortcuts
+- **User Data:** User name and email are managed globally using Zustand for demo purposes. No backend persistence is implemented.
+- **UI Components:** Shadcn UI and Radix UI are used for rapid, accessible component development. Fallbacks are provided if some components fail to install.
+- **Form Handling:** React Hook Form and Zod are used for robust form validation and type safety.
+- **No Auth:** There is no authentication/authorization logic; user data is editable by anyone for demo simplicity.
+- **Styling:** Tailwind CSS is used for utility-first, rapid styling.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Reasoning for Tech/Pattern Choices
+- **Next.js (App Router):** Modern React framework with file-based routing, SSR, and great DX.
+- **Zustand:** Lightweight, scalable state management for global user settings.
+- **Shadcn UI + Radix UI:** Accessible, composable UI primitives that speed up development and ensure good UX.
+- **React Hook Form + Zod:** Best-in-class form state management and validation for type safety and user feedback.
+- **Tailwind CSS:** Enables fast, consistent, and responsive UI development.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Techniques Used
+- **Client-Side State Management:** Zustand for global state (user settings).
+- **Form Validation:** React Hook Form with Zod for type-safe, robust form handling.
+- **Component Composition:** Shadcn UI and Radix UI for accessible, composable UI primitives.
+- **Responsive Design:** Tailwind CSS for utility-first, responsive styling.
+- **Modern React Patterns:** Hooks (useState, useEffect, custom hooks), functional components, and controlled inputs.
+- **TypeScript:** Static typing for improved developer experience and code quality.
+- **Next.js App Router:** File-based routing and server-side rendering capabilities.
+- **Fallback UI:** Graceful degradation with fallback components when third-party UI libraries fail to install.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For any questions or issues, please open an issue on the [GitHub repo](https://github.com/ngochieu276/home-challenge).
