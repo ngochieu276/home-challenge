@@ -22,7 +22,7 @@ export default function DashboardPage() {
 
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-[#23235b] to-[#3a1c71] text-white relative">
+    <div className="flex min-h-screen relative">
       <main className="flex-1 p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
         <label className="col-span-2 text-[30px] font-semibold">
           Admin Dashboard

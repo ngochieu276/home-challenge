@@ -8,11 +8,11 @@ export default function ReportedPosts({ posts }: { posts: Post[] }) {
       {posts.map((post, idx) => (
         <Card
           key={post.title + idx}
-          className="bg-gradient-to-tr from-[#5b5ba7] to-[#3a1c71] text-white"
+          className=""
         >
           <CardContent className="flex justify-between items-center">
             <CardTitle>{post.title}</CardTitle>
-            <Button className="bg-green-400 w-25" variant={"primary"}>
+            <Button className="bg-green-400 w-25" >
               View
             </Button>
           </CardContent>
