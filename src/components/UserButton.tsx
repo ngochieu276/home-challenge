@@ -9,7 +9,7 @@ const UserButton = () => {
   return (
     <div className="mr-10 cursor-pointer">
       <HoverCard>
-        <HoverCardTrigger>
+        <HoverCardTrigger asChild>
           <Avatar>
             <AvatarFallback>{name.charAt(0).toUpperCase()}</AvatarFallback>
           </Avatar>

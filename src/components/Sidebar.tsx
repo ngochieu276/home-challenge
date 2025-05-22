@@ -40,7 +40,7 @@ export default function Sidebar() {
                     router.push(item.href);
                     setOpen(false);
                   }}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors hover:bg-neutral-600/30 ${
+                  className={`cursor-pointer flex items-center gap-3 px-4 py-3 rounded-lg transition-colors hover:bg-neutral-600/30 ${
                     isActive ? "bg-neutral-600/30" : ""
                   }`}
                 >

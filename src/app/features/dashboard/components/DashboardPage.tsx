@@ -16,6 +16,9 @@ const pendingEvents: Event[] = [
 
 const reportedPosts = [
   { title: "Post Title 1", views: 120 },
+  { title: "Post Title 2", views: 120 },
+  { title: "Post Title 3", views: 120 },
+  { title: "Post Title 4", views: 120 },
 ];
 
 export default function DashboardPage() {
@@ -50,10 +53,10 @@ export default function DashboardPage() {
             Reported Posts
           </label>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <ReportedPosts posts={reportedPosts} />
-            <ReportedPosts posts={reportedPosts} />
-            <ReportedPosts posts={reportedPosts} />
-            <ReportedPosts posts={reportedPosts} />
+            {reportedPosts.map((post) => {
+              return <ReportedPosts post={post} key={post.title}/>;
+            })}
+            
           </div>
         </div>
       </main>
