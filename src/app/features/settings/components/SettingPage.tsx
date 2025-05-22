@@ -87,7 +87,6 @@ const SettingPage = () => {
             </label>
           </div>
           <Button
-
             type="submit"
             className="w-40"
             disabled={isSubmitting}
