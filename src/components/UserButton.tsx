@@ -1,5 +1,5 @@
 import React from "react";
-import { useSettingsStore } from "@/app/store/store.setting";
+import { useSettingsStore } from "@/store/store.setting";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 

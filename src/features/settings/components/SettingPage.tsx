@@ -7,7 +7,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useSettingsStore } from "../../../store/store.setting";
+import { useSettingsStore } from "../../../../store/store.setting";
 import { toast } from "react-toastify";
 
 const settingsSchema = z.object({
