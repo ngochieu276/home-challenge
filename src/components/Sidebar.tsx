@@ -1,14 +1,11 @@
 "use client";
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { HamburgerMenuIcon, HomeIcon } from "@radix-ui/react-icons";
+import { HamburgerMenuIcon, HomeIcon, GearIcon } from "@radix-ui/react-icons";
 
 const navItems = [
   { label: "Dashboard", icon: <HomeIcon />, href: "/dashboard" },
-  { label: "Suppliers", icon: <span className="i-lucide-users" />, href: "/suppliers" },
-  { label: "Events", icon: <span className="i-lucide-calendar" />, href: "/events" },
-  { label: "Reports", icon: <span className="i-lucide-file-text" />, href: "#" },
-  { label: "Statistic", icon: <span className="i-lucide-pie-chart" />, href: "#" },
+  { label: "Settings", icon: <GearIcon />, href: "/settings" },
 ];
 
 export default function Sidebar() {

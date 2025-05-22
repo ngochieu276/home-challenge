@@ -1,7 +1,7 @@
 'use client'
-import PendingEvents, { Event } from "./PendingEvents";
-import ReportedPosts from "./ReportedPosts";
-import StatCards from "./StatCards";
+import PendingEvents, { Event } from "../../../../components/PendingEvents";
+import ReportedPosts from "../../../../components/ReportedPosts";
+import StatCards from "../../../../components/StatCards";
 
 
 const pendingSuppliers: Event[] = [
