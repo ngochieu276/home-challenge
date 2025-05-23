@@ -5,8 +5,11 @@ import {
   CardTitle,
   CardContent,
 } from "@/components/ui/card";
-import { Button } from "./ui/button";
+
 import dynamic from "next/dynamic";
+const Button = dynamic(() => import("./ui/button").then((mod) => mod.Button), {
+  ssr: false,
+});
 
 const ConfirmModal = dynamic(() => import("./ConfirmModal"), {
   ssr: false,
@@ -38,6 +41,9 @@ export default function PendingEvents({ events }: { events: Event[] }) {
                     <Button
                       className="w-25 bg-green-600 hover:bg-green-600/90"
                       type="button"
+                      aria-haspopup="dialog"
+                      aria-expanded="false"
+                      aria-controls="dialog-id"
                       aria-label="Approve"
                     >
                       Approve
