@@ -1,4 +1,4 @@
-# Dash
+Live Demo: https://home-challenge-git-main-nguyen-ngoc-hieus-projects.vercel.app
 
 [GitHub Repository](https://github.com/ngochieu276/home-challenge)
 
@@ -19,11 +19,58 @@
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Assumptions & Shortcuts
-- **User Data:** User name and email are managed globally using Zustand for demo purposes. No backend persistence is implemented.
-- **UI Components:** Shadcn UI and Radix UI are used for rapid, accessible component development. Fallbacks are provided if some components fail to install.
-- **Form Handling:** React Hook Form and Zod are used for robust form validation and type safety.
-- **No Auth:** There is no authentication/authorization logic; user data is editable by anyone for demo simplicity.
-- **Styling:** Tailwind CSS is used for utility-first, rapid styling.
+
+   **Structure:** I use standard CodeBase NextJS structure
+      src:
+         -app
+            -dashboard
+            -settings
+            -events
+               -[eventId]
+         -components
+            -ui(Shadcn UI)
+            Sidebar
+            Header
+            ...
+         -features
+            -components
+            -api
+            -hook
+         -libs
+            -utils
+         -store
+            store.setting.store
+
+   This structure can easily to extend large scale app, easy to maintain
+
+   **Components:**
+      Separation of Concerns(UI vs logic)
+      Keep Components Pure
+      Component-Driven Development
+
+   **Reusable:**
+      Alway make sure component can reuseable
+
+      example in code:
+         src\components\ConfirmModal.tsx
+       this component has props
+
+         ConfirmModalProps {
+            title: string;
+            description: string;
+            trigger: React.ReactNode;
+            onConfirm: () => boolean | Promise<boolean>;
+            confirmSuccessMsg?: string
+         }
+
+      with this
+         we can set title. des, trigger component depend on circumstand
+         onConfirm function that take sync/async func and return boolean, this func run when we click confirm
+         confirmSuccessMsg also depend on circumstance we use
+
+  
+
+
 
 ## Reasoning for Tech/Pattern Choices
 - **Next.js (App Router):** Modern React framework with file-based routing, SSR, and great DX.
