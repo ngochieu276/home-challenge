@@ -60,3 +60,12 @@ body,
     --radius: 0.5rem;      
   }
 }
+
+
+.approve {
+    @apply green-600 hover:bg-green-600/90
+}
+
+.reject {
+    @apply red-400 hover:red-400/90
+}

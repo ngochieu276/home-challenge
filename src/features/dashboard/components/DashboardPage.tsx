@@ -1,7 +1,7 @@
 'use client'
-import PendingEvents, { Event } from "../../../../components/PendingEvents";
-import ReportedPosts from "../../../../components/ReportedPosts";
-import StatCards from "../../../../components/StatCards";
+import PendingEvents, { Event } from "@/components/PendingEvents";
+import ReportedPosts from "@/components/ReportedPosts";
+import StatCards from "@/components/StatCards";
 
 
 const pendingSuppliers: Event[] = [
@@ -27,38 +27,38 @@ export default function DashboardPage() {
   return (
     <div className="flex min-h-screen relative">
       <main className="flex-1 p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <label className="col-span-2 text-[30px] font-semibold">
+        <h1 className="col-span-2 text-[30px] font-semibold">
           Admin Dashboard
-        </label>
+        </h1>
         <div className="col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
           <StatCards value={8} label="Submissions" />
           <StatCards value={150} label="Total Users" />
           <StatCards value={24} label="Active Posts" />
           <StatCards value={2} label="Reported Content" />
         </div>
-        <div className="col-span-2 md:col-span-1">
-          <label className=" text-[30px] font-semibold">
+        <section className="col-span-2 md:col-span-1">
+          <h2 className="text-[30px] font-semibold">
             Pending Suppliers
-          </label>
+          </h2>
           <PendingEvents events={pendingSuppliers} />
-        </div>
-        <div className="col-span-2 md:col-span-1">
-          <label className="col-span-2 text-[30px] font-semibold">
+        </section>
+        <section className="col-span-2 md:col-span-1">
+          <h2 className="col-span-2 text-[30px] font-semibold">
             Pending Events
-          </label>
+          </h2>
           <PendingEvents events={pendingEvents} />
-        </div>
-        <div className="col-span-2 ">
-          <label className="col-span-2 text-[30px] font-semibold">
+        </section>
+        <section className="col-span-2 ">
+          <h2 className="col-span-2 text-[30px] font-semibold">
             Reported Posts
-          </label>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {reportedPosts.map((post) => {
               return <ReportedPosts post={post} key={post.title}/>;
             })}
             
           </div>
-        </div>
+        </section>
       </main>
     </div>
   );

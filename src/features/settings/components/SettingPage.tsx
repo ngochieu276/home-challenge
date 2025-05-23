@@ -7,7 +7,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useSettingsStore } from "../../../../store/store.setting";
+import { useSettingsStore } from "@/store/store.setting";
 import { toast } from "react-toastify";
 
 const settingsSchema = z.object({
@@ -51,7 +51,7 @@ const SettingPage = () => {
 
   return (
     <div className="p-8">
-      <label className="col-span-2 text-[30px] font-semibold">Settings</label>
+      <h1 className="col-span-2 text-[30px] font-semibold">Settings</h1>
       <Card className="mx-auto mt-10 bg-card border rounded-xl p-8 shadow-sm">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div>
