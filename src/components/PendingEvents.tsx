@@ -6,7 +6,11 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Button } from "./ui/button";
-import ConfirmModal from "./ConfirmModal";
+import dynamic from "next/dynamic";
+
+const ConfirmModal = dynamic(() => import("./ConfirmModal"), {
+  ssr: false,
+});
 
 export interface Event {
   name: string;

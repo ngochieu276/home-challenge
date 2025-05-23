@@ -1,7 +1,21 @@
 import React from "react";
 import { useSettingsStore } from "@/store/store.setting";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
+
 import { Avatar, AvatarFallback } from "./ui/avatar";
+import dynamic from "next/dynamic";
+
+const HoverCard = dynamic(
+  () => import("./ui/hover-card").then((mod) => mod.HoverCard),
+  { ssr: false }
+);
+const HoverCardContent = dynamic(
+  () => import("./ui/hover-card").then((mod) => mod.HoverCardContent),
+  { ssr: false }
+);
+const HoverCardTrigger = dynamic(
+  () => import("./ui/hover-card").then((mod) => mod.HoverCardTrigger),
+  { ssr: false }
+);
 
 const UserButton = () => {
   const { name, email } = useSettingsStore((state) => state);
